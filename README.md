@@ -28,7 +28,7 @@ In your QMake project, add:
 Connect using TCP:
 
     #include "qmqtt.h"
-
+    
     QMQTT::Client *client = new QMQTT::Client(QHostAddress::LocalHost, 1883);
     client->setClientId("clientId");
     client->setUsername("user");
@@ -78,13 +78,13 @@ Slots
     void setWillQos(const quint8 willQos);
     void setWillRetain(const bool willRetain);
     void setWillMessage(const QString& willMessage);
-
+    
     void connectToHost();
     void disconnectFromHost();
-
+    
     quint16 subscribe(const QString& topic, const quint8 qos);
     void unsubscribe(const QString& topic);
-
+    
     quint16 publish(const Message& message);
 
 Signals
@@ -93,7 +93,7 @@ Signals
     void connected();
     void disconnected();
     void error(const QMQTT::ClientError error);
-
+    
     void subscribed(const QString& topic, const quint8 qos);
     void unsubscribed(const QString& topic);
     void published(const quint16 msgid, const quint8 qos);
@@ -113,6 +113,8 @@ New BSD License
 
 Contributors
 =============
+
+@simonwang, (forked then working on this by himself)
 
 [@avsdev-cw](https://github.com/avsdev-cw),
 [@alex-spataru](https://github.com/alex-spataru),
